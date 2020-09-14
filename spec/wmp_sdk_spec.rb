@@ -1,17 +1,15 @@
 RSpec.describe WmpSdk do
 
   let(:version) { WmpSdk::VERSION }
-  let(:app_id) { 'wx50ff4144e89487ce' }
-  let(:secret) { '45682f05a7275aa7a341ca9fd37bb4d7' }
+  let(:app_id) { '3fec3d94074cc7cc19700497cb77f73c' }
+  let(:secret) { 'ec135e6bae59fa5dd4358ad9339adf6a' }
   let(:miniprogram_state) { 'developer' }
-  let(:token) { '7783c5477363d5056ac93e9a02bfd8d7' }
-  let(:encoding_aes_key) { 'nFbZIerhaXbdzYsG4maN1S5eBgN18O6c2BTbVvN5gRg' }
-
+  let(:token) { '55034443a553f13df5c64a55d4c4eaef' }
+  let(:encoding_aes_key) { '643550f92e24aecf90a1c4b914036b4c' }
 
   it 'has a version number' do
     expect(WmpSdk::VERSION).eql? version
   end
-
 
   it 'should be configured successfully' do
     WmpSdk.configure do |config|
@@ -29,8 +27,8 @@ RSpec.describe WmpSdk do
   end
 
   it 'should return access token successfully' do
-    access_token_response = WmpSdk::Api.invoke_access_token
-    expect(access_token_response[:access_token]).not_to be nil
+    response = WmpSdk::Api.invoke_access_token
+    expect(response).not_to be nil
   end
 
 end
